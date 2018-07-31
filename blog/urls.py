@@ -2,5 +2,9 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url('', views.post_list, name='post_list'),
+    url(r'^$', views.post_list, name='post_list'),
+    url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
 ]
+
+# Needs the regex pattern finder for pk
+# Needs ^$ to indicate the beginning and end of the URL
